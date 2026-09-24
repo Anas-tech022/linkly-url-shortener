@@ -138,8 +138,8 @@ A URL document can contain information such as:
 
 ```javascript
 {
-  url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Glob…"
-  shorturl: "short-url"
+  url: "https://example.com/this-is-a-very-long-url-that-is-difficult-to-share"
+  shorturl: "your-short-url"
   success: true
   createdAt: Date
 }
