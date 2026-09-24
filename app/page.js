@@ -1,69 +1,143 @@
-import Image from "next/image";
+import React from 'react'
+import Link from 'next/link'
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.js
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="relative min-h-[calc(100vh-4rem)] overflow-hidden bg-slate-50 text-slate-900 selection:bg-purple-500 selection:text-white">
+      
+      {/* Background Ambient Glow Orbs */}
+      <div className="pointer-events-none absolute -top-40 left-1/2 -z-10 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-purple-300/40 via-indigo-200/30 to-pink-300/40 blur-3xl opacity-70" />
+      <div className="pointer-events-none absolute top-1/2 -right-40 -z-10 h-[400px] w-[400px] rounded-full bg-purple-300/20 blur-3xl" />
+      <div className="pointer-events-none absolute top-1/3 -left-40 -z-10 h-[400px] w-[400px] rounded-full bg-indigo-300/20 blur-3xl" />
+
+      {/* Hero Section */}
+      <section className="mx-auto flex max-w-6xl flex-col items-center px-6 py-20 text-center lg:py-28">
+        
+        {/* Badge */}
+        <div className="group mb-8 inline-flex items-center gap-2 rounded-full border border-purple-200/80 bg-white/80 px-4 py-1.5 text-sm font-semibold text-purple-700 shadow-sm backdrop-blur-md transition-all hover:border-purple-300 hover:shadow-md hover:scale-105">
+          <span className="flex h-2 w-2 rounded-full bg-purple-600 animate-pulse" />
+          <span>🚀 Simple. Fast. Powerful.</span>
+        </div>
+
+        {/* Title */}
+        <h1 className="max-w-4xl text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-7xl">
+          Shorten Your Links.
+          <span className="mt-2 block bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-500 bg-clip-text text-transparent">
+            Share Them Anywhere.
+          </span>
+        </h1>
+
+        {/* Subtitle */}
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl">
+          Linkly is a simple and fast URL shortener that turns long,
+          complicated URLs into short and easy-to-share links.
+        </p>
+
+        {/* CTA Buttons */}
+        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <Link
+            href="/shorten"
+            className="rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 px-8 py-4 font-bold text-white shadow-lg shadow-purple-500/25 transition-all duration-200 hover:-translate-y-1 hover:from-purple-700 hover:to-indigo-700 hover:shadow-xl hover:shadow-purple-500/35 active:scale-95"
+          >
+            Shorten a URL →
+          </Link>
+
+          <Link
+            href="/about"
+            className="rounded-xl border border-slate-200 bg-white/90 px-8 py-4 font-bold text-slate-700 shadow-sm backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-purple-300 hover:bg-purple-50/50 hover:text-purple-700 hover:shadow-md active:scale-95"
+          >
+            Learn More
+          </Link>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="relative border-t border-purple-100/80 bg-white/70 backdrop-blur-md py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          
+          <div className="mb-16 text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+              Why use Linkly?
+            </h2>
+            <p className="mt-3 text-lg text-slate-600">
+              Everything you need to manage and share your links easily.
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            
+            {/* Card 1 */}
+            <div className="group relative rounded-2xl border border-slate-200/80 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-purple-300 hover:shadow-xl hover:shadow-purple-500/10">
+              <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-100 text-3xl transition-transform group-hover:scale-110">
+                ⚡
+              </div>
+              <h3 className="text-xl font-bold text-slate-900">
+                Fast & Simple
+              </h3>
+              <p className="mt-3 leading-relaxed text-slate-600">
+                Create short URLs quickly without complicated steps or
+                unnecessary features.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="group relative rounded-2xl border border-slate-200/80 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-indigo-300 hover:shadow-xl hover:shadow-indigo-500/10">
+              <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-100 text-3xl transition-transform group-hover:scale-110">
+                🔗
+              </div>
+              <h3 className="text-xl font-bold text-slate-900">
+                Easy to Share
+              </h3>
+              <p className="mt-3 leading-relaxed text-slate-600">
+                Turn long URLs into short links that are easier to copy,
+                remember, and share.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="group relative rounded-2xl border border-slate-200/80 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-pink-300 hover:shadow-xl hover:shadow-pink-500/10">
+              <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-pink-100 text-3xl transition-transform group-hover:scale-110">
+                🛡️
+              </div>
+              <h3 className="text-xl font-bold text-slate-900">
+                Convenient
+              </h3>
+              <p className="mt-3 leading-relaxed text-slate-600">
+                Keep your links short and organized while making them
+                convenient to use.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="relative overflow-hidden bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 py-20 text-center text-white shadow-2xl">
+        {/* Glow Effects */}
+        <div className="pointer-events-none absolute -left-20 top-0 h-80 w-80 rounded-full bg-purple-500/20 blur-3xl" />
+        <div className="pointer-events-none absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-pink-500/20 blur-3xl" />
+
+        <div className="relative mx-auto max-w-4xl px-6">
+          <h2 className="text-3xl font-extrabold sm:text-4xl lg:text-5xl">
+            Ready to shorten your URL?
+          </h2>
+
+          <p className="mx-auto mt-4 max-w-xl text-lg text-purple-200">
+            Create a short, clean, and shareable link in just a few seconds.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+          <Link
+            href="/shorten"
+            className="mt-8 inline-block rounded-xl bg-white px-8 py-4 font-bold text-purple-900 shadow-xl transition-all duration-200 hover:-translate-y-1 hover:bg-purple-50 hover:shadow-2xl hover:scale-105 active:scale-95"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            Get Started →
+          </Link>
         </div>
-      </main>
-    </div>
-  );
+      </section>
+
+    </main>
+  )
 }
+
+export default Home
