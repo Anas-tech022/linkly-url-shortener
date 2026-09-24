@@ -14,6 +14,6 @@ export default async function Page({ params }) {
          redirect(doc.url)
     }
     else{
-        redirect("http://localhost:3000")
+        redirect("/")
     }
   }
